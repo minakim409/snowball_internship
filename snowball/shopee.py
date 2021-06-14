@@ -88,20 +88,10 @@ def main(search_term):
         
 
         print([name, item_price[0], item_price[-1], location, freeShip])
-        # temp_product = product(name, item_price[0], item_price[-1], location, freeShip)
-        # product_list.append(temp_product)
+
         rows.append([name, item_price[0], item_price[-1], location, freeShip])
 
-    # temp = []
-    # product_list.sort(key=lambda x: x.min_price)
-
-    # for ppp in product_list:
-    #     print(ppp.min_price)
-
-    # with open('shopee_item_list.csv', 'a', newline='', encoding='utf-8') as f:
-    #     writer = csv.writer(f)
-    #     writer.writerow([search_term,'Name', 'Minimum Price', 'Maximum Price', 'Location', 'Free Shipping'])
-    #     writer.writerows(rows)
+    
     w_path = '{}_shopee_item_list.csv'.format(search_term)
     col_name = ['Name', 'Minimum Price','Maximum Price','Location','Free Shipping']
     result = pd.DataFrame(rows, columns=col_name)
@@ -112,5 +102,3 @@ input_list = ['口罩','coffee']
 
 for i in range(len(input_list)):
     main(input_list[i])
-
-#할거 output 파일만 두개로 figure out 하기
